@@ -148,16 +148,18 @@ function moveDodger(e) {
    * we've declared for you above.)
    * And be sure to use the functions declared below!
    */
+   DODGER.e.stopPropagation();
+      DODGER.e.preventDefault();
      if (e.which === LEFT_ARROW) {
        moveDodgerLeft();
-      DODGER.e.stopPropagation();
-      DODGER.e.preventDefault();
+     // DODGER.e.stopPropagation();
+     // DODGER.e.preventDefault();
        //alert("left arrow")
      }
      else if (e.which === RIGHT_ARROW) {
        moveDodgerRight()
-       DODGER.e.stopPropagation();
-       DODGER.e.preventDefault();
+      // DODGER.e.stopPropagation();
+      // DODGER.e.preventDefault();
        //alert("right arrow")
      }
    }
