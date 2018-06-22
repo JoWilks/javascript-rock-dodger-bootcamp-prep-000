@@ -152,14 +152,10 @@ function moveDodger(e) {
 
      if (e.which === LEFT_ARROW) {
        moveDodgerLeft();
-     // DODGER.e.stopPropagation();
-     // DODGER.e.preventDefault();
        //alert("left arrow")
      }
      else if (e.which === RIGHT_ARROW) {
        moveDodgerRight()
-      // DODGER.e.stopPropagation();
-      // DODGER.e.preventDefault();
        //alert("right arrow")
      }
    }
