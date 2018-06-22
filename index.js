@@ -82,10 +82,7 @@ function createRock(x) {
     // implement me!
     
     var bottomEdge = positionToInteger(rock.style.top)
-    rock.style.top = `${bottomEdge + 2}px`
-   
-   
-        
+    
     // (use the comments below to guide you!)
     /**
      * If a rock collides with the DODGER,
@@ -103,6 +100,7 @@ function createRock(x) {
      */
      
       else if(bottomEdge<400) {
+      rock.style.top = `${bottomEdge + 2}px`
       window.requestAnimationFrame(down)
     }
     
@@ -151,11 +149,15 @@ function moveDodger(e) {
    * And be sure to use the functions declared below!
    */
      if (e.which === LEFT_ARROW) {
-       moveDodgerLeft()
+       moveDodgerLeft();
+      DODGER.e.stopPropagation();
+      DODGER.e.preventDefault();
        //alert("left arrow")
      }
      else if (e.which === RIGHT_ARROW) {
        moveDodgerRight()
+       DODGER.e.stopPropagation();
+       DODGER.e.preventDefault();
        //alert("right arrow")
      }
    }
@@ -168,9 +170,9 @@ function moveDodgerLeft() {
    */
     var leftEdge = positionToInteger(DODGER.style.left);
     function left() {
-    DODGER.style.left = `${leftEdge -= 4}px`
     
       if(leftEdge > 0 ) {
+        DODGER.style.left = `${leftEdge -= 4}px`
         window.requestAnimationFrame(left)
    }
    }
@@ -186,9 +188,10 @@ function moveDodgerRight() {
    
    var rightEdge = positionToInteger(DODGER.style.left);
    function right() {
-   DODGER.style.left = `${rightEdge += 4}px`
+   
    
    if(rightEdge < 360) {
+     DODGER.style.left = `${rightEdge += 4}px`
      window.requestAnimationFrame(right)
    }
 }
