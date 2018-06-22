@@ -149,8 +149,8 @@ function moveDodger(e) {
    * And be sure to use the functions declared below!
    */
    
-      DODGER.e.preventDefault();
-      DODGER.e.stopPropagation();
+     // DODGER.e.preventDefault();
+      //DODGER.e.stopPropagation();
      if (e.which === LEFT_ARROW) {
        moveDodgerLeft();
      // DODGER.e.stopPropagation();
